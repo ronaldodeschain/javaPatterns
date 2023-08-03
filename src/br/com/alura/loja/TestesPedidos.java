@@ -8,6 +8,7 @@ import br.com.alura.pedido.GeraPedido;
 import br.com.alura.pedido.GeraPedidoHandler;
 import br.com.alura.pedido.Pedido;
 import br.com.alura.pedido.acao.EnviarEmailPedido;
+import br.com.alura.pedido.acao.LogDePedido;
 import br.com.alura.pedido.acao.SalvarPedidoNoBanco;
 
 public class TestesPedidos {
@@ -21,7 +22,8 @@ public class TestesPedidos {
 		GeraPedido gerador = new GeraPedido(cliente, valorOrcamento, quantidadeItens);
 		GeraPedidoHandler handler = new GeraPedidoHandler(
 				Arrays.asList(new SalvarPedidoNoBanco(),
-						new EnviarEmailPedido()
+						new EnviarEmailPedido(),
+						new LogDePedido()
 						));
 		handler.execute(gerador);
 		

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import br.com.alura.loja.orcamento.ItemOrcamento;
 import br.com.alura.loja.orcamento.Orcamento;
+import br.com.alura.loja.orcamento.OrcamentoProxy;
 
 public class TestesComposicao {
 
@@ -17,8 +18,12 @@ public class TestesComposicao {
 		novo.adicionarItem(new ItemOrcamento(new BigDecimal("500")));
 		novo.adicionarItem(antigo);
 		
-		System.out.println(novo.getValor());
-
+		OrcamentoProxy proxy = new OrcamentoProxy(novo);
+		
+		System.out.println(proxy.getValor());
+		System.out.println(proxy.getValor());
+		
 	}
 
 }
+//aqui está sendo feito o padrão Composite, composição dos itens Orçamento e Item Orcamento usando a Interface Orçavel

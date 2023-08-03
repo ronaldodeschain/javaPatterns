@@ -16,9 +16,7 @@ public class GeraPedido {
 		this.cliente = cliente;
 		this.valorOrcamento = valorOrcamento;
 		this.quantidadeItens = quantidadeItens;
-	}
-	
-	
+	}	
 
 	public String getCliente() {
 		return cliente;
